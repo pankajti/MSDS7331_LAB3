@@ -1,4 +1,5 @@
 import pandas as pd
+from surprise import KNNWithMeans, KNNBaseline
 
 ratings_df =pd.read_csv('data/BX-Book-Ratings.csv', sep=';', encoding = 'unicode_escape')
 books_df= pd.read_csv('data/BX-Books.csv', sep=';' , error_bad_lines=False, encoding = "ISO-8859-1")
