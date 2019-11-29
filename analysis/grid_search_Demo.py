@@ -1,5 +1,5 @@
-
 from surprise import Dataset, SVD, KNNBaseline, KNNBasic, KNNWithMeans
+from surprise.model_selection import GridSearchCV
 
 # Use movielens-100K
 data = Dataset.load_builtin('ml-100k')
@@ -7,7 +7,9 @@ data = Dataset.load_builtin('ml-100k')
 param_grid = {'n_epochs': [5, 10], 'lr_all': [0.002, 0.005],
               'reg_all': [0.4, 0.6]}
 
-from surprise.model_selection import GridSearchCV
+KNNBasic().trainset
+
+KNNBaseline().sim
 
 param_grid = {'k': [40, 100], 'min_k': [5, 10],}
 
@@ -22,5 +24,10 @@ print(gs.best_score['rmse'])
 print(gs.best_params['rmse'])
 
 be = gs.best_estimator
-
+s = SVD()
+s.get_neighbors()
+from surprise.trainset import Trainset
+t= Trainset()
+s.get_neighbors()
+Dataset.load_from_df()
 print(be)
